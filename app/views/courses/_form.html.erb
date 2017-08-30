@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: "ckeditor" %>
   </div>
 
   <div class="field">
@@ -26,7 +26,19 @@
     <%= f.text_field :course_category_id %>
   </div>
 
+  <div class="field">
+    <%= f.label :Upload_Banner_Image %>
+    <%= f.file_field :course_banner_image %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+$(document).ready(function() {
+ $(".ckeditor").ckeditor({
+  })
+  });
+</script>

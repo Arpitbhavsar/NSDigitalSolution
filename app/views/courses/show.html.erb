@@ -1,19 +1,24 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-9 col-sm-9">
+			<div class="">
+				<h1><strong><%= link_to @course.course_category.name, course_category_path(@course.course_category) %> / <%= @course.name %></strong></h1>
+			</div>
+			<div class="banner-img course-page">
+				<%= image_tag @course.course_banner_image_url, class: "img-responsive" %>
+			</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @course.name %>
-</p>
+			<div class="course-page">
+				<h3><strong>Course Details</strong></h3>
+				<p><%= @course.description.html_safe %></p>
+			</div>
+			<%= link_to 'Edit', edit_course_category_course_path(@course.course_category, @course) %> |
+			<%= link_to 'Back', courses_path %>
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @course.description %>
-</p>
 
-<p>
-  <strong>Course category:</strong>
-  <%= @course.course_category.name %>
-</p>
-
-<%= link_to 'Edit', edit_course_category_course_path(@course.course_category, @course) %> |
-<%= link_to 'Back', courses_path %>

@@ -17,6 +17,7 @@ class CoursesController < ApplicationController
     @course = Course.new
   end
 
+
   # GET /courses/1/edit
   def edit
   end
@@ -69,6 +70,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:name, :description, :course_category_id, :slug)
+      params.require(:course).permit(:name, :description, :course_category_id, :slug ,:course_banner_image)
     end
 end
